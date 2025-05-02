@@ -1,4 +1,9 @@
-
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  /* image-rendering: pixelated; */
+}
 #controls {
   position: fixed;
   bottom: 20px;
