@@ -1,0 +1,81 @@
+
+#controls {
+  position: fixed;
+  bottom: 20px;
+  width: 96%; /* برای اینکه دکمه‌ها از عرض صفحه استفاده کنند */
+  display: flex;
+  justify-content: space-between; /* فاصله‌گذاری از دو طرف */
+  padding: 10px;
+  z-index: 1000;
+}
+
+#moveLeft, #moveRight {
+  /* دکمه‌های حرکت در سمت چپ */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px; /* فاصله بین دکمه‌ها */
+}
+
+#shoot, #jump {
+  /* دکمه‌های پرش و شلیک در سمت راست */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: 10px; /* فاصله بین دکمه‌ها */
+}
+
+button {
+  /* استایل کلی دکمه‌ها */
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 20px;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+button:active {
+  background-color: rgba(0, 0, 0, 1);
+}
+
+html, body, ul, li {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+canvas {
+  display: block;
+  width: 762;
+  margin: 0 auto;
+  background-color: blue;
+}
+
+p {
+  text-align: center;
+}
+
+body {
+  overflow: hidden;
+  height: 100%;
+}
+
+html {
+  overflow: hidden;
+  height: 100%;
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

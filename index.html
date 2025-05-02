@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <!-- The actual resolution of the NES is 256x240.
+         Ideally, we draw in this size and scale appropriately.-->
+    <title>Super Mario Bros</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/game.css">
+  </head>
+  <body>
+    <script type="text/javascript" src="js/util.js"></script>
+    <script type="text/javascript" src="js/input.js"></script>
+    <script type="text/javascript" src="js/resources.js"></script>
+    <script type="text/javascript" src="js/sprite.js"></script>
+    <script type="text/javascript" src="js/entity.js"></script>
+    <script type="text/javascript" src="js/pipe.js"></script>
+    <script type="text/javascript" src="js/mushroom.js"></script>
+    <script type="text/javascript" src="js/fireflower.js"></script>
+    <script type="text/javascript" src="js/star.js"></script>
+    <script type="text/javascript" src="js/fireball.js"></script>
+    <script type="text/javascript" src="js/coin.js"></script>
+    <script type="text/javascript" src="js/bcoin.js"></script>
+    <script type="text/javascript" src="js/goomba.js"></script>
+    <script type="text/javascript" src="js/koopa.js"></script>
+    <script type="text/javascript" src="js/floor.js"></script>
+    <script type="text/javascript" src="js/block.js"></script>
+    <script type="text/javascript" src="js/rubble.js"></script>
+    <script type="text/javascript" src="js/prop.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+
+  
+
+
+    <script type="text/javascript" src="js/flag.js"></script>
+    <script type="text/javascript" src="js/levels/level.js"></script>
+    <script type="text/javascript" src="js/levels/11.js"></script>
+    <script type="text/javascript" src="js/levels/11tunnel.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+<!--    
+    <div class="info">
+      <p class="controls">Move: Arrow Keys, Jump: X, Run: Z</p>
+      <div class="links">My Links <br><a href="http://garrettjohnson.net">Portfolio</a> <a href="http://linkedin.com/in/garretttjohnson">LinkedIn</a> <a href="https://github.com/reruns">github</a><div>
+    </div> -->
+
+    <!-- <div id="controls" class="tr" style="position: absolute; bottom: 20px; left: 20px; z-index: 1000;">
+      <button class="td-4" id="moveLeft">◀️</button>
+      <button id="moveRight">▶️</button>
+  
+   
+      <button id="shoot">🔥</button>
+      <button id="jump">⬆️</button>      
+    </div> -->
+
+    <div id="controls">
+      <div id="leftControls">
+        <button id="moveLeft">◀️</button>
+        <button id="moveRight">▶️</button>
+      </div>
+      <div id="rightControls">
+        <button id="jump">⬆️</button>
+        <button id="shoot">🔥</button>
+      </div>
+    </div>
+    
+    <script>
+      function triggerKey(code, type) {
+        const event = new KeyboardEvent(type, { keyCode: code, which: code, bubbles: true });
+        document.dispatchEvent(event);
+      }
+    
+      function bindButton(buttonId, keyCode) {
+        const btn = document.getElementById(buttonId);
+        if (!btn) return;
+    
+        let isDown = false;
+    
+        const down = (e) => {
+          e.preventDefault();
+          if (!isDown) {
+            triggerKey(keyCode, 'keydown');
+            isDown = true;
+          }
+        };
+    
+        const up = (e) => {
+          e.preventDefault();
+          if (isDown) {
+            triggerKey(keyCode, 'keyup');
+            isDown = false;
+          }
+        };
+    
+        btn.addEventListener('mousedown', down);
+        btn.addEventListener('mouseup', up);
+        btn.addEventListener('mouseleave', up);
+    
+        btn.addEventListener('touchstart', down);
+        btn.addEventListener('touchend', up);
+        btn.addEventListener('touchcancel', up);
+      }
+    
+      document.addEventListener('DOMContentLoaded', () => {
+        bindButton('moveLeft', 37);   // Left arrow
+        bindButton('moveRight', 39);  // Right arrow
+        bindButton('jump', 88);       // X key
+        bindButton('shoot', 90);      // Z key
+      });
+    </script>
+  </body>
+</html>
