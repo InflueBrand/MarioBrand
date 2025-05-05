@@ -110,7 +110,7 @@ var oneone = Mario.oneone = function () {
 
 
     // --- بخش‌های با تنوع بالا (زمین، لوله‌ها، بلوک‌ها، دشمنان) ---
-    let scenario = 0.14;
+    let scenario = Math.random();
 
     if (scenario < 0.03) { // سناریو 1: الگوی اصلی (احتمال خیلی خیلی کم)
         level.putFloor(0 + offset, 212 + offset); // زمین صاف
